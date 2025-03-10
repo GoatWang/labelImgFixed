@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "labelImg"
+version = "1.8.4"  # Replace with the actual version from libs/__init__.py
+description = "LabelImg is a graphical image annotation tool and label object bounding boxes in images"
+readme = "README.rst"
+authors = [{ name = "TzuTa Lin", email = "tzu.ta.lin@gmail.com" }]
+license = { text = "MIT License" }
+requires-python = ">=3.0.0"
+dependencies = [
+    "pyqt5",
+    "lxml",
+]
+keywords = ["labelImg", "labelTool", "development", "annotation", "deeplearning"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.3",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+]
+
+[project.urls]
+Homepage = "https://github.com/tzutalin/labelImg"
+
+[project.scripts]
+labelImg = "labelImg.labelImg:main"
+
+[tool.setuptools]
+packages = { find = { where = ["."] } }
+package-data = { "labelImg" = ["data/predefined_classes.txt"] }
+include-package-data = true
+
+[tool.setuptools.package-dir]
+"labelImg" = "."
